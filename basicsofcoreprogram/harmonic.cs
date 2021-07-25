@@ -10,15 +10,23 @@ namespace basic
         {
             int i, number;
             double s = 0;
+            double S;
             Console.Write("Input the number of terms : ");
             number = Convert.ToInt32(Console.ReadLine());
-            for (i = 1; i <= number; i++)
+            if (number == 0)
+                Console.Write("Invalid");
+            else
             {
-                Console.Write("1/{0} + ", i);
-                s += 1 / (float)i;
+                Console.Write("1");
+                for (i = 2; i <= number; i++)
+                {
+                    Console.Write(" + 1/{0}", i);
+                    s += 1 / (float)i;
+                }
+                S = s + 1;
+                Console.WriteLine("");
+                Console.WriteLine("Sum of Series is : " + S);
             }
-            Console.WriteLine("------");
-            Console.WriteLine("Sum of Series" + s);
         }
     }
 }
